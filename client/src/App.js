@@ -6,6 +6,8 @@ import Register from './components/Register';
 import ForgotPassword from './components/ForgotPassword';
 import Admin from './components/Admin';
 import axios from 'axios'; // Import axios for making HTTP requests
+import CreateExam from './components/CreateExam';
+import ExamList from './components/ExamList';
 
 const App = () => {
   const logout = async () => {
@@ -37,6 +39,12 @@ const App = () => {
             <li>
               <button onClick={logout}>Logout</button> {/* Thêm nút Logout */}
             </li>
+            <li>
+              <Link to="/create-exam">Create Exam</Link>
+            </li>
+            <li>
+              <Link to="/exam-list">Exam List</Link>
+            </li>
           </ul>
         </nav>
 
@@ -46,6 +54,8 @@ const App = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/create-exam" component={CreateExam} />
+          <Route path="/exam-list" component={ExamList} />
         </Routes>
       </div>
     </Router>

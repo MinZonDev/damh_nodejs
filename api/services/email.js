@@ -29,10 +29,19 @@ const sendResetPasswordEmail = async (to, token) => {
   const subject = "Reset password";
   // replace this url with the link to the reset password page of your front-end app
   const resetPasswordUrl = `${config.url}/api/v1/auth/reset-password?token=${token}`;
-  const text = `Dear user,
-To reset your password, click on this link: ${resetPasswordUrl}
-; Password should be automatically updated to "123456789"
-If you did not request any password resets, then ignore this email.`;
+  const text = 
+  `<html>
+      <body>
+        <h1>Hi there,</h1>
+        <p>To reset your password, click on this link:</p>
+        <button><a href="${resetPasswordUrl}">Click here</a></button>
+        <br />
+        <p>Password should be automatically updated to "123456789"</p>
+        <p>If you did not request any password resets, then ignore this email.</p>
+        <p>Best regards,</p>
+        <p>MINZON QUIZZ</p>
+      </body>
+    </html>`;
   await sendEmail(to, subject, text);
 };
 
