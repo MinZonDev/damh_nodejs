@@ -30,7 +30,7 @@ const generateQuestions = async (subjectName) => {
     const subject_id = existingSubject._id;
     const easyQuestions = await Question.aggregate([
       { $match: { subject_id: subject_id, difficulty: "easy" } },
-      { $sample: { size: 3 } },
+      { $sample: { size: 4 } },
     ]);
 
     const mediumQuestions = await Question.aggregate([
@@ -43,18 +43,11 @@ const generateQuestions = async (subjectName) => {
       { $sample: { size: 3 } },
     ]);
 
-    // Additional logic for getting 1 random question
-    const randomQuestion = await Question.aggregate([
-      { $match: { subject_id: subject_id } },
-      { $sample: { size: 1 } },
-    ]);
-
     // Combine and shuffle the questions
     const allQuestions = [
       ...easyQuestions,
       ...mediumQuestions,
-      ...hardQuestions,
-      ...randomQuestion,
+      ...hardQuestions
     ];
     const shuffledQuestions = allQuestions;
 
