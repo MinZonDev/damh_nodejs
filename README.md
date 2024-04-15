@@ -34,4 +34,4 @@ Install dependencies
 
 - [@MinZonDev](https://github.com/MinZonDev)(Phạm Minh Trọng)
 - [@danhtienmuanha](https://github.com/danhtienmuanha)(Trần Lê Minh Hiếu)
-- [@Ieprechaun] (https://github.com/Ieprechaun)(Phạm Ngọc Sơn)
+- [@Ieprechaun](https://github.com/Ieprechaun)(Phạm Ngọc Sơn)
