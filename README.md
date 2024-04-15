@@ -4,7 +4,7 @@ Viết API trả về các phương thức đăng nhập, đăng xuất, tạo c
 
 ## Tech stack
 
-**Language:** Javascript
+**Language:** Javascript/NodeJS
 
 **Framework:** ExpressJS
 
